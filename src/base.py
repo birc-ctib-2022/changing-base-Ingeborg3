@@ -28,5 +28,19 @@ def change_to_base(n: int, b: int) -> str:
     >>> change_to_base(31, 16)
     '1F'
     """
-    assert 2 <= b <= 16
-    return ''  # FIXME: return n in the right base
+    assert 2 <= b <= 16 
+
+  
+    lst = ''
+    while n//b >= 1:
+        lst += digits[n%b] 
+        n = n//b
+    lst += digits[n]
+    return lst[::-1]
+
+print(change_to_base(1, 2))
+print(change_to_base(31, 2))
+print(change_to_base(31, 8))
+print(change_to_base(31, 16)) 
+
+
